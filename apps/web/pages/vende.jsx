@@ -20,36 +20,42 @@ export default function Vende(){
     useEffect(() =>{
         if (window.innerWidth > 767) {
     
-            let section = document.querySelector('#llegaste');
+            let section = document.querySelector('#llegaste'),
+                title = document.querySelector('.block.llegaste h2');
     
             if (section) {
                 let wrapper = section.querySelector('.wrapper-sections'),
                     variable = window.innerWidth - window.innerHeight,
                     width = wrapper.offsetWidth;
-                
                 section.style.height = (width - variable) + 'px';
                 
                 const handleScroll = event => {
                     let sectionRect = section.getBoundingClientRect();
     
                     if (sectionRect.top < 0) {
+                        title.style.position = 'fixed';
                         wrapper.style.position = 'fixed';
                         wrapper.style.top = 0;
+                        title.style.top = '200px';
                         wrapper.style.bottom = 'unset';
                         wrapper.style.transform = 'translateX(' + sectionRect.top + 'px)';
                     }
                     
                     if (sectionRect.top > 0) {
+                        title.style.position = 'absolute';
                         wrapper.style.position = 'absolute';
                         wrapper.style.top = 0;
+                        title.style.top = '200px';
                         wrapper.style.bottom = 'unset';
                         wrapper.style.transform = 'translateX(0)';
                     }
                     
                     if ((sectionRect.bottom - window.innerHeight) < 0) {
+                        title.style.position = 'absolute';
                         wrapper.style.position = 'absolute';
                         wrapper.style.top = 'unset';
                         wrapper.style.bottom = 0;
+                        title.style.top = '200px';
                         wrapper.style.transform = 'translateX(-' + (width - window.innerWidth) + 'px)';
                     }
     
@@ -168,7 +174,7 @@ export default function Vende(){
                         </div>
                     </div>
                 </section>
-                <section className='block' id='title-statick'>
+                {/*}<section className='block' id='title-statick'>
                     <div className='holder'>
                         <div className='container-fluid'>
                             <div className='row'>
@@ -176,10 +182,13 @@ export default function Vende(){
                             </div>
                         </div>
                     </div>
-                </section>
+                </section>{*/}
                 <section className='block llegaste' id='llegaste'>
                     <div className='holder'>
                         <div className='container-fluid'>
+                            <div className='header'>
+                                <h2><span>¿Por qué vender tu propiedad</span> con Lomas Home Inmobiliaria?</h2>
+                            </div>
                             <div className='wrapper-sections'>
                                 <div className='item item-one'>
                                     <div className='content'>
@@ -189,7 +198,7 @@ export default function Vende(){
                                                 <Image src={ImagenVende1} alt="Asesor 1" />
                                             </div>
                                             <div className='text-wrapper'>
-                                                <p>Queremos hacer de este proceso una experiencia extraordinaria.</p>
+                                                <p>Queremos hacer de este proceso <strong>una experiencia extraordinaria.</strong></p>
                                             </div>
                                         </div>
                                     </div>
@@ -201,7 +210,7 @@ export default function Vende(){
                                                 <Image src={ImagenVende2} alt="Asesor 2" />
                                             </div>
                                             <div className='text-wrapper'>
-                                                <p>Absorbemos todos los procesos operativos y entregamos un reporte con todos los movimientos relacionados con tus propiedades. </p>
+                                                <p><strong>Absorbemos todos los procesos operativos</strong> y entregamos un reporte con todos los movimientos relacionados con tus propiedades. </p>
                                             </div>
                                         </div>
                                     </div>
@@ -213,7 +222,7 @@ export default function Vende(){
                                                 <Image src={ImagenVende3} alt="Asesor 2" />
                                             </div>
                                             <div className='text-wrapper'>
-                                                <p>Nos ocuparemos de recolectar el material visual de tus bienes, como fotografías profesionales y creación de recorridos virtuales, para ofrecer una excelente visibilidad.</p>
+                                                <p>Nos ocuparemos de <strong>recolectar el material visual de tus bienes,</strong> como fotografías profesionales y creación de recorridos virtuales, para ofrecer una excelente visibilidad.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -222,7 +231,7 @@ export default function Vende(){
                                     <div className='content'>
                                         <div className='flex-content'>
                                             <div className='text-wrapper'>
-                                                <p>Contamos con asesoría integral para atender cualquier tema legal y de operación. </p>
+                                                <p><strong>Contamos con asesoría integral</strong> para atender cualquier tema legal y de operación. </p>
                                             </div>
                                             <div className='image-wrapper'>
                                                 <Image src={ImagenVende4} alt="Asesor 4" />
@@ -237,7 +246,7 @@ export default function Vende(){
                                                 <Image src={ImagenVende5} alt="Asesor 5" />
                                             </div>
                                             <div className='text-wrapper'>
-                                                <p>Contamos con asesoría integral para atender cualquier tema legal y de operación. </p>
+                                                <p>Nuestros socios vendedores son esenciales, por ello les <strong>asignamos un agente inmobiliario  altamente capacitado</strong> para crear un canal de comunicación eficiente.</p>
                                             </div>
                                         </div>
                                     </div>
