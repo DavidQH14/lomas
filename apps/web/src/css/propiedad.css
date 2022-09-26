@@ -121,6 +121,21 @@
     font-size: 16px;
     color: #515761; 
 }
+
+#content .video{
+    padding: 40px 0px;
+    border-bottom: 1px solid #979797;
+}
+
+#content .video h3{
+    font-family: 'Silka-bold';
+    font-size: 22px;
+    color: #181D24;
+}
+#content .video div{
+    width: 100% !important;
+    height: 482px !important;
+}
 @media (max-width: 767px){
     #galeria{
         background: #FFFFFF;
@@ -175,5 +190,9 @@
     }
     #content .aminidades p span{
         font-size: 20px;
+    }
+    #content .video div{
+        width: 100% !important;
+        height: 233px !important;
     }
 }

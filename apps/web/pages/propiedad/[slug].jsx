@@ -5,10 +5,13 @@ import imageUrlBuilder from '@sanity/image-url'
 import { M2Totales, M2Const, Rec, BaniosComp, Banio, Cochera  } from 'ui/constants'
 import SanityClient from '../../libs/Client'
 import Layout from '../../src/Layout/Layout'
+import dynamic from 'next/dynamic'
+const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 const builder = imageUrlBuilder(SanityClient)
 
 function Propiedad({propiedad}){
+    console.log(propiedad)
     const [currentImage, setCurrentImage] = useState(0);
     const [isViewerOpen, setIsViewerOpen] = useState(false);
     let array = []
@@ -124,6 +127,12 @@ function Propiedad({propiedad}){
                                                 { propiedad?.elevator ? <p className="nav-link text-center"><span><Image src="/icons/ficha_tecnica/elevador.svg" alt="pin" width="40" height="40" layout={"fixed"} /></span><br/>Elevador</p> : null }
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col-12 video">
+                                        <h3>Video</h3>
+                                        <ReactPlayer url={propiedad.url} />
                                     </div>
                                 </div>
                             </div>
